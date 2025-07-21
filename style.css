@@ -1,0 +1,101 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #00bcd4;
+  --summary-bg: #1e1e1e;
+  --border-color: #333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* Container com flexbox */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;           /* permite quebra de linha */
+  justify-content: center;   /* centraliza horizontalmente */
+  gap: 1.5rem;               /* espaçamento entre os itens */
+  max-width: 1200px;         /* limite de largura */
+  margin: 0 auto;            /* centraliza o container na tela */
+  padding: 1rem;             /* espaço interno */
+  box-sizing: border-box;    /* padding não altera largura */
+}
+
+/* Estilo dos detalhes */
+details {
+  width: 100%;
+  max-width: 350px;          /* largura máxima para cada item */
+  background-color: var(--summary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centraliza o texto do summary */
+summary {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  outline: none;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Remove seta padrão do Chrome */
+}
+
+.video-container {
+  margin-top: 1rem;
+}
+
+iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+@media (max-width: 600px) {
+  iframe {
+    height: 200px;
+  }
+
+  body {
+    padding: 1rem;
+  }
+}
