@@ -36,21 +36,27 @@ h4 {
   margin: 0 auto;            /* centraliza o container na tela */
   padding: 1rem;             /* espaço interno */
   box-sizing: border-box;    /* padding não altera largura */
+  align-items: flex-start;   /* NOVO: alinha itens no topo */
 }
 
 /* Estilo dos detalhes */
 details {
   width: 100%;
   max-width: 350px;          /* largura máxima para cada item */
+  min-height: 60px;          /* NOVO: altura mínima consistente */
   background-color: var(--summary-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1rem;
   transition: background-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* REMOVIDO: display: flex e propriedades relacionadas */
   text-align: center;
+  box-sizing: border-box;    /* NOVO: inclui padding na largura */
+}
+
+/* NOVO: Garante que o details mantenha suas dimensões */
+details[open] {
+  align-self: flex-start;    /* Mantém no topo quando expandido */
 }
 
 /* Centraliza o texto do summary */
@@ -62,6 +68,7 @@ summary {
   list-style: none;
   text-align: center;
   width: 100%;
+  margin-bottom: 0.5rem;     /* NOVO: espaçamento consistente */
 }
 
 summary::-webkit-details-marker {
@@ -70,6 +77,7 @@ summary::-webkit-details-marker {
 
 .video-container {
   margin-top: 1rem;
+  width: 100%;               /* NOVO: garante largura total */
 }
 
 iframe {
@@ -104,6 +112,12 @@ button:hover {
   body {
     padding: 1rem;
   }
+  
+  /* NOVO: Em telas pequenas, força uma coluna */
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 details details {
@@ -115,4 +129,5 @@ details details {
   border-radius: 6px;
   text-align: center;
   opacity: 0.95;
+  box-sizing: border-box;    /* NOVO: consistência no box model */
 }
