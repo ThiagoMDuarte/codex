@@ -20,6 +20,12 @@ h1 {
   margin-bottom: 2rem;
 }
 
+h4 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
 /* Container com flexbox */
 .flex-container {
   display: flex;
@@ -98,4 +104,15 @@ button:hover {
   body {
     padding: 1rem;
   }
+}
+
+details details {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 85%;
+  background-color: var(--summary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-align: center;
+  opacity: 0.95;
 }
