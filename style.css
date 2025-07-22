@@ -131,3 +131,11 @@ details details {
   opacity: 0.95;
   box-sizing: border-box;    /* NOVO: consistência no box model */
 }
+
+details details summary {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  box-sizing: border-box;
+}
